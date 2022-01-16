@@ -1,4 +1,3 @@
-#[warn(dead_code)]
 fn distance_nearest_vowel(s: &str) {
   let s = s.to_lowercase();
   let bytes = s.as_bytes();
@@ -9,8 +8,8 @@ fn distance_nearest_vowel(s: &str) {
       break;
     }
   }
-  
 }
-fn main() {
 
+fn main() {
+  distance_nearest_vowel("Hhhfgfyhfgyfygf fyu")
 }
