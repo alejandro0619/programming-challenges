@@ -1,2 +1,2 @@
-language = "rust"
+language = "typescript"
 run = "cargo run"
