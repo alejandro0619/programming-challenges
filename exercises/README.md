@@ -8,4 +8,4 @@ Other solution: </br>
 [Typescript solution](https://github.com/alejandro0619/programming-challenges/tree/main/loop-integers-ts) </br>
 
 3) Given a word, return the distance between the nearest vowel to the beginning of that word. </br>
-[Rust solution]((https://github.com/alejandro0619/programming-challenges/tree/main/exercises/nearest-vowel-rs) </br>
+[Rust solution](https://github.com/alejandro0619/programming-challenges/tree/main/exercises/nearest-vowel-rs) </br>
