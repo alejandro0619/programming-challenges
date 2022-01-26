@@ -9,4 +9,3 @@ function FirstFactorial(num: number) {
 
 }
  
-console.log( FirstFactorial(5) )
