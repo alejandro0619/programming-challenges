@@ -1,2 +1,5 @@
 target
 .replit
+node_modules
+index.js.map
+index.js
