@@ -5,4 +5,7 @@ Other solution: </br>
 
 2) Given an integer, loop through it, that means, in a range: (0..integers) and for each loop, display those numbers that are odds. </br>
 [Rust solution](https://github.com/alejandro0619/programming-challenges/tree/main/exercises/loop-integers-rs/) </br>
-[Typescript solution](https://github.com/alejandro0619/programming-challenges/tree/main/loop_integers_TS/) </br>
+[Typescript solution](https://github.com/alejandro0619/programming-challenges/tree/main/loop-integers-ts) </br>
+
+3) Given a word, return the distance between the nearest vowel to the beginning of that word. </br>
+[Rust solution](https://github.com/alejandro0619/programming-challenges/tree/main/exercises/nearest-vowel-rs) </br>
