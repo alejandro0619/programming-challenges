@@ -13,3 +13,10 @@ Other solution: </br>
 4) Have the function ```FirstFactorial(num)``` take the num parameter being passed and return the factorial of it. For example: ```if num = 4```, then your program should return ```(4 * 3 * 2 * 1) = 24```. For the test cases, the range will be between 1 and 18 and the input will always be an integer. </br>
 [Rust solution](https://github.com/alejandro0619/programming-challenges/tree/main/first-factorial-rs) </br>
 [Typescript solution](https://github.com/alejandro0619/programming-challenges/tree/main/first-factorial-ts)
+
+5) Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string). Examples: 
+    ```
+    solution('abc', 'bc') // returns true
+    solution('abc', 'd') // returns false
+    ```
+[Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending.rs)
