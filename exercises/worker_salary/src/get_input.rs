@@ -1,3 +1,5 @@
+// THIS WON'T WORK IN WINDOWS
+// TERMION IS NOT COMPATIBLE
 extern crate termion;
 
 use termion::color;
@@ -58,7 +60,7 @@ pub fn get_user_input() -> (u32, u32) {
   };
 
   break 'main (wh, ch)
-  }
+    }
   };
   (worked_hours, cost_per_hour)
 }
