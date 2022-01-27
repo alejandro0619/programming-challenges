@@ -19,4 +19,5 @@ Other solution: </br>
     solution('abc', 'bc') // returns true
     solution('abc', 'd') // returns false
     ```
-[Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending.rs)
+[Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending-rs)
+[Typescript Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending-ts)
