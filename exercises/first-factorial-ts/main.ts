@@ -1,4 +1,4 @@
-function FirstFactorial(num: number) { 
+function firstFactorial(num: number) { 
   let acc: number = 1;
   while( num >= 1 ){
     acc *= num; 
@@ -8,4 +8,5 @@ function FirstFactorial(num: number) {
   return acc; 
 
 }
- 
+
+console.log(firstFactorial(5))
