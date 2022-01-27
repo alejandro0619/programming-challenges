@@ -1,8 +1,3 @@
-// THIS WON'T WORK IN WINDOWS
-// TERMION IS NOT COMPATIBLE
-extern crate termion;
-
-use termion::color;
 
 use std::io;
 
@@ -11,12 +6,12 @@ pub fn calculate_total_payment(wh: u32, ch: u32)-> u32{
 }
 
 pub fn display(payment: u32) {
-  println!("{}The total payment for your work is: {}", color::Fg(color::Green), payment);
+  println!("The total payment for your work is: {}",payment);
 }
 
 pub fn get_user_input() -> (u32, u32) {
   let (worked_hours, cost_per_hour) = 'main: loop {
-    println!("{}Input the hours you worked and the cost per hour separated by a space", color::Fg(color::Blue));
+    println!("Input the hours you worked and the cost per hour separated by a space");
 
   let mut input = String::new();
   io::stdin()
@@ -24,7 +19,7 @@ pub fn get_user_input() -> (u32, u32) {
     .expect("Failed to read line");
   
   if input.contains('-') {
-    println!("{}The salary must be greater than 0!", color::Fg(color::Red));
+    println!("The salary must be greater than 0!");
     continue 'main;
   } else {
     let input_split: Vec<&str> = input.split(' ').collect();
@@ -34,7 +29,7 @@ pub fn get_user_input() -> (u32, u32) {
       i = i + 1; 
       break 'splitting_loop (input_split[ i - 1 ], input_split[ i ])
     } else {
-      println!("{}Please, enter two values!", color::Fg(color::Red));
+      println!("Please, enter two values!");
       continue 'main;
     }
   };
@@ -44,7 +39,7 @@ pub fn get_user_input() -> (u32, u32) {
       number_parsed
     },
     Err(_) => {
-      println!("{}The number couldn't be parsed, please enter again", color::Fg(color::Red));
+      println!("The number couldn't be parsed, please enter again");
       continue 'main
     }
   };
@@ -54,7 +49,7 @@ pub fn get_user_input() -> (u32, u32) {
       number_parsed
     }
     Err(_) => {
-      println!("{}The number couldn't be parsed, please enter again", color::Fg(color::Red));
+      println!("The number couldn't be parsed, please enter again");
       continue 'main
     }
   };
