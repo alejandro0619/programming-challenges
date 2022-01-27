@@ -22,5 +22,5 @@ Other solution: </br>
 [Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending-rs) </br>
 [Typescript Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending-ts)
 
-6) Given the hours and cost per hour, calculate the payment to a worker.
+6) Given the hours and cost per hour, calculate the payment to a worker. </br>
 [Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/worker-salary-rs)
