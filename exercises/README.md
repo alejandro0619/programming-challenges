@@ -14,13 +14,11 @@ Other solution: </br>
 [Rust solution](https://github.com/alejandro0619/programming-challenges/tree/main/first-factorial-rs) </br>
 [Typescript solution](https://github.com/alejandro0619/programming-challenges/tree/main/first-factorial-ts)
 
-5) Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string). Examples: 
-    ```
-    solution('abc', 'bc') // returns true
-    solution('abc', 'd') // returns false
-    ```
+5) Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string). Examples:
 [Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending-rs) </br>
-[Typescript Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending-ts)
+[Typescript Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending-ts) ```solution('abc', 'bc') // returns truesolution('abc', 'd') // returns false```
+   
 
 6) Given the hours and cost per hour, calculate the payment to a worker. </br>
-[Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/worker-salary-rs)
+[Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/worker-salary-rs) </br>
+[Typescript Solution](https://github.com/alejandro0619/programming-challenges/tree/main/worker-salary-ts)
