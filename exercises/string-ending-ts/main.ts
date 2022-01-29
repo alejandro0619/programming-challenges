@@ -1,4 +1,4 @@
-function solution(str: String, ending: String): boolean {
+function solution(str: string, ending: string): boolean {
   return str.substring(str.length - ending.length) == ending ? true : false;
 }
 
