@@ -1,4 +1,4 @@
-// TODO: return two u32 vectors in a tuple
+// Parses the strin the user input, returns it as a tuple of unsigned 32 bits vector
 fn parse_string(good_string: &str, evil_string: &str)-> (Vec<u32>,Vec<u32>) {
     let mut good_races_number_parsed: Vec<u32> = Vec::new();
     let mut evil_races_number_parsed: Vec<u32> = Vec::new();
@@ -11,7 +11,18 @@ fn parse_string(good_string: &str, evil_string: &str)-> (Vec<u32>,Vec<u32>) {
     (good_races_number_parsed, evil_races_number_parsed)
 }
 
-// TODO: create both Good and Evil implementation 
+// Return a string depending who wins or draws
+fn display(good_worth: u32, evil_worth: u32) -> String {
+    if good_worth > evil_worth {
+        format!("Battle Result: Good triumphs over Evil")
+    } else if good_worth == evil_worth {
+        format!("Battle Result: No victor on this battle field")
+    } else {
+        format!("Battle Result: Evil eradicates all trace of Good")
+    }
+}
+
+// TODO: create and Evil implementation 
 fn good_vs_evil(good: &str, evil: &str) -> String {
     // turn both good and evil str into a vector of u32 valeues.
     let (good_races_parsed, evil_races_parsed) = parse_string(good, evil);
@@ -107,7 +118,19 @@ fn good_vs_evil(good: &str, evil: &str) -> String {
             }
         }
     }
-
+    //---- impl GoodNumbers
+    impl GoodNumber {
+        fn get_number(&self) -> u32 {
+            match self {
+                GoodNumber::HobbitsNumber(val) => *val,
+                GoodNumber::MenNumber(val) => *val,
+                GoodNumber::ElvesNUmber(val) => *val,
+                GoodNumber::DwarvesNumber(val) => *val,
+                GoodNumber::EaglesNumber(val) => *val,
+                GoodNumber::WizardsNumber(val) => *val
+            }
+        }
+    }
     //---- impl Good struct
     impl Good {
         fn from(races: Vec<u32>) -> Self {
@@ -126,25 +149,29 @@ fn good_vs_evil(good: &str, evil: &str) -> String {
                 wizards
             }
         }
-        
+        fn calculate_worth(&self) -> u32 {
+            // Gets every race's number and mutiply by the worth value of each race to get total worth of each one.
+            let hobbits_worth = self.hobbits.get_number() * GoodWorth::get_worth(&GoodWorth::HobbitsWorth);
+            let men_worth = self.men.get_number() *  GoodWorth::get_worth(&GoodWorth::MenWorth);
+            let elves_worth = self.elves.get_number() * GoodWorth::get_worth(&GoodWorth::ElvesWorth);
+            let dwarves_worth = self.dwarves.get_number() * GoodWorth::get_worth(&GoodWorth::DwarvesWorth);
+            let eagles_worth =self.eagles.get_number() * GoodWorth::get_worth(&GoodWorth::EaglesWorth);
+            let wizards_worth = self.wizards.get_number() * GoodWorth::get_worth(&GoodWorth::WizardsNumber);
+
+            // Return the total worth of the Good side
+            hobbits_worth + men_worth + elves_worth + dwarves_worth + eagles_worth + wizards_worth
+        } 
     }
 
     //---- impl Evil struct
     impl Evil {
 
     }
-    let a = Good {
-        hobbits: GoodNumber::HobbitsNumber(5),
-        men: GoodNumber::MenNumber(10),
-        elves: GoodNumber::ElvesNUmber(4),
-        dwarves: GoodNumber::DwarvesNumber(9),
-        eagles: GoodNumber::EaglesNumber(0),
-        wizards: GoodNumber::WizardsNumber(1),
-    };
-    println!("{:#?}", Good::from(good_races_parsed));
+
+    println!("{:#?}", Good::from(good_races_parsed).calculate_worth());
     "".to_string()
   }
 
 fn main() {
-    good_vs_evil("0 0 0 3 6 9", "0 5 9 0");
+    good_vs_evil("999 0 0 3 6 9", "0 5 9 0");
 }
