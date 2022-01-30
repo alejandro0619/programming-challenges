@@ -33,7 +33,7 @@ Although weather, location, supplies and valor play a part in any battle, if you
 
 Thus, given the count of each of the races on the side of good, followed by the count of each of the races on the side of evil, determine which side wins.
 
-##Input:
+## Input:
 
 
 The function will be given two parameters. Each parameter will be a string of multiple integers separated by a single space. Each string will contain the count of each race on the side of good and evil.
@@ -46,5 +46,10 @@ The second parameter will contain the count of each race on the side of evil in 
 Orcs, Men, Wargs, Goblins, Uruk Hai, Trolls, Wizards.
 All values are non-negative integers. The resulting sum of the worth for each side will not exceed the limit of a 32-bit integer.
 
-Output:
-Return "Battle Result: Good triumphs over Evil" if good wins, "Battle Result: Evil eradicates all trace of Good" if evil wins, or "Battle Result: No victor on this battle field" if it ends in a tie.
+Output: 
+
+Return "Battle Result: Good triumphs over Evil" if good wins
+
+"Battle Result: Evil eradicates all trace of Good" if evil wins,
+
+or "Battle Result: No victor on this battle field" if it ends in a tie.

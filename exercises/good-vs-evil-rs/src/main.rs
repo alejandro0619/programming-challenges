@@ -1,10 +1,17 @@
 // TODO: return two u32 vectors in a tuple
-fn parse_string(good_string: &str, evil_string: &str) {
-    let good_vec: Vec<&str> = good_string.split_whitespace().collect();
-    let evil_vec: Vec<&str> = evil_string.split_whitespace().collect();
+fn parse_string(good_string: &str, evil_string: &str)-> [Vec<u32>, Vec<u32>] {
+    let mut good_races_number_parsed: Vec<u32> = Vec::new();
+    let mut evil_races_number_parsed: Vec<u32> = Vec::new();
+    for race in good_string.split_whitespace() {
+        good_races_number_parsed.push(race.parse().unwrap());
+    }
+    for race in evil_string.split_whitespace( ){
+        evil_races_number_parsed.push(race.parse().unwrap());
+    }
+    [good_races_number_parsed, evil_races_number_parsed]
 }
 
-// TODO: create both Good and Evil implementation
+// TODO: create both Good and Evil implementation 
 fn good_vs_evil(good: &str, evil: &str) -> String {
     parse_string(good, evil);
     #[derive(Debug)]
@@ -27,29 +34,29 @@ fn good_vs_evil(good: &str, evil: &str) -> String {
     }
     #[derive(Debug)]
     struct Good {
-        Hobbits: GoodNumber,
-        Men: GoodNumber,
-        Elves: GoodNumber,
-        Dwarves: GoodNumber,
-        Eagles: GoodNumber,
-        Wizards: GoodNumber
+        hobbits: GoodNumber,
+        men: GoodNumber,
+        elves: GoodNumber,
+        dwarves: GoodNumber,
+        eagles: GoodNumber,
+        wizards: GoodNumber
     }
     struct Evil {
-        Orcs: EvilNumber,
-        Men: EvilNumber,
-        Wargs: EvilNumber,
-        Goblins: EvilNumber,
-        UrukHai: EvilNumber,
-        Trolls: EvilNumber,
-        Wizards: EvilNumber
+        orcs: EvilNumber,
+        men: EvilNumber,
+        wargs: EvilNumber,
+        goblins: EvilNumber,
+        uruk_hai: EvilNumber,
+        trolls: EvilNumber,
+        wizards: EvilNumber
     }
     let a = Good {
-        Hobbits: GoodNumber::HobbitsNumber(5),
-        Men: GoodNumber::MenNumber(10),
-        Elves: GoodNumber::ElvesNUmber(4),
-        Dwarves: GoodNumber::DwarvesNumber(9),
-        Eagles: GoodNumber::EaglesNumber(0),
-        Wizards: GoodNumber::WizardsNumber(1),
+        hobbits: GoodNumber::HobbitsNumber(5),
+        men: GoodNumber::MenNumber(10),
+        elves: GoodNumber::ElvesNUmber(4),
+        dwarves: GoodNumber::DwarvesNumber(9),
+        eagles: GoodNumber::EaglesNumber(0),
+        wizards: GoodNumber::WizardsNumber(1),
     };
     println!("{:?}", a);
     "".to_string()
