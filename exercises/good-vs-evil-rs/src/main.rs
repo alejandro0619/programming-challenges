@@ -11,7 +11,7 @@ fn parse_string(good_string: &str, evil_string: &str)-> (Vec<u32>,Vec<u32>) {
     (good_races_number_parsed, evil_races_number_parsed)
 }
 
-// Return a string depending who wins or draws
+// Return a string depending who wins or draws 
 fn display(good_worth: u32, evil_worth: u32) -> String {
     if good_worth > evil_worth {
         format!("Battle Result: Good triumphs over Evil")
