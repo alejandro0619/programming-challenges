@@ -25,7 +25,6 @@ fn display(good_worth: u32, evil_worth: u32) -> String {
     }
 }
 
-// TODO: create and Evil implementation 
 fn good_vs_evil(good: &str, evil: &str) -> String {
     // turn both good and evil str into a vector of u32 valeues.
     let (good_races_parsed, evil_races_parsed) = parse_string(good, evil);
