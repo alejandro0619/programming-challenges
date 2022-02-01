@@ -1,3 +1,6 @@
+// I know this is so much code for the challenge but I wanted to put in pratice all the things I've learning in Rust. Sorry for the spaghetti code.
+
+
 // Parses the strin the user input, returns it as a tuple of unsigned 32 bits vector
 fn parse_string(good_string: &str, evil_string: &str)-> (Vec<u32>,Vec<u32>) {
     let mut good_races_number_parsed: Vec<u32> = Vec::new();
@@ -62,7 +65,7 @@ fn good_vs_evil(good: &str, evil: &str) -> String {
         MenNumber(u32),
         WargsNumber(u32),
         GoblinsNumber(u32),
-        Uruk_haiNumber(u32),
+        UrukHaiNumber(u32),
         TrollsNumber(u32),
         WizardsNumber(u32)
     }
@@ -149,6 +152,9 @@ fn good_vs_evil(good: &str, evil: &str) -> String {
                 wizards
             }
         }
+    }
+
+    impl Good {
         fn calculate_worth(&self) -> u32 {
             // Gets every race's number and mutiply by the worth value of each race to get total worth of each one.
             let hobbits_worth = self.hobbits.get_number() * GoodWorth::get_worth(&GoodWorth::HobbitsWorth);
@@ -156,22 +162,69 @@ fn good_vs_evil(good: &str, evil: &str) -> String {
             let elves_worth = self.elves.get_number() * GoodWorth::get_worth(&GoodWorth::ElvesWorth);
             let dwarves_worth = self.dwarves.get_number() * GoodWorth::get_worth(&GoodWorth::DwarvesWorth);
             let eagles_worth =self.eagles.get_number() * GoodWorth::get_worth(&GoodWorth::EaglesWorth);
-            let wizards_worth = self.wizards.get_number() * GoodWorth::get_worth(&GoodWorth::WizardsNumber);
+            let wizards_worth = self.wizards.get_number() * GoodWorth::get_worth(&GoodWorth::WizardsWorth);
 
             // Return the total worth of the Good side
             hobbits_worth + men_worth + elves_worth + dwarves_worth + eagles_worth + wizards_worth
         } 
     }
-
+    impl EvilNumber {
+        fn get_number(&self) -> u32 {
+            match self {
+                EvilNumber::OrcsNumber(val) => *val,
+                EvilNumber::MenNumber(val) => *val,
+                EvilNumber::WargsNumber(val) => *val,
+                EvilNumber::GoblinsNumber(val) => *val,
+                EvilNumber::UrukHaiNumber(val) => *val,
+                EvilNumber::TrollsNumber(val) => *val,
+                EvilNumber::WizardsNumber(val) => *val,
+            }
+        }
+    }
     //---- impl Evil struct
     impl Evil {
+        fn from (races: Vec<u32>) -> Self {
+            let orcs = EvilNumber::OrcsNumber(races[0]);
+            let men = EvilNumber::MenNumber(races[1]);
+            let wargs = EvilNumber::WargsNumber(races[2]);
+            let goblins = EvilNumber::GoblinsNumber(races[3]);
+            let uruk_hai = EvilNumber::UrukHaiNumber(races[4]);
+            let trolls = EvilNumber::TrollsNumber(races[5]);
+            let wizards = EvilNumber::WizardsNumber(races[6]);
 
+            Self {
+                orcs,
+                men,
+                wargs,
+                goblins,
+                uruk_hai,
+                trolls,
+                wizards
+            }
+        }
     }
 
-    println!("{:#?}", Good::from(good_races_parsed).calculate_worth());
-    "".to_string()
+    impl Evil {
+        fn calculate_worth(&self) -> u32 {
+            let orcs_worth = self.orcs.get_number() * EvilWorth::get_worth(&EvilWorth::OrcsWorth);
+            let men_worth = self.men.get_number() * EvilWorth::get_worth(&EvilWorth::MenWorth);
+            let wargs_worth = self.wargs.get_number() * EvilWorth::get_worth(&EvilWorth::WargsWorth);
+            let goblins_worth = self.goblins.get_number() * EvilWorth::get_worth(&EvilWorth::GoblinsWorth);
+            let uruk_hai_worth = self.uruk_hai.get_number() * EvilWorth::get_worth(&EvilWorth::UrukHaiWorth);
+            let trolls_worth = self.trolls.get_number() *  EvilWorth::get_worth(&EvilWorth::TrollsWorth);
+            let wizards_worth = self.wizards.get_number() *  EvilWorth::get_worth(&EvilWorth::WizardsWorth);
+
+            orcs_worth + men_worth + wargs_worth + goblins_worth + uruk_hai_worth + trolls_worth + wizards_worth
+        }
+    }
+
+    let good_total_worth = Good::from(good_races_parsed).calculate_worth();
+    let evil_total_worth = Evil::from(evil_races_parsed).calculate_worth();
+    // winner:
+    display(good_total_worth, evil_total_worth)
+    
   }
 
 fn main() {
-    good_vs_evil("999 0 0 3 6 9", "0 5 9 0");
+    println!("{}", good_vs_evil("0 0 0 0 0 10", "0 0 0 0 0 0 10"));
 }
