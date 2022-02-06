@@ -18,9 +18,8 @@ Other solution: </br>
 [Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending-rs) </br>
 [Typescript Solution](https://github.com/alejandro0619/programming-challenges/tree/main/string-ending-ts) 
 ```solution('abc', 'bc') 
-// returns truesolution('abc', 'd') // returns false
+// returns true solution('abc', 'd') // returns false
 ```
-   
 
 6) Given the hours and cost per hour, calculate the payment to a worker. </br>
 [Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/worker-salary-rs) </br>
@@ -28,4 +27,15 @@ Other solution: </br>
 
 7) Good vs Evil - This challengue has its own readme inside its repository to avoid flood this readme's section.
 [Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/good-vs-evil-rs) </br>
-[Typescript Solution](https://github.com/alejandro0619/programming-challenges/tree/main/good-vs-evil-ts)
+[Typescript Solution](https://github.com/alejandro0619/programming-challenges/tree/main/good-vs-evil-ts) </br>
+
+8) Write a simple parser that will parse and run Deadfish. </br>
+Deadfish has 4 commands, each 1 character long: </br>
+**i** increments the value (initially 0) </br>
+**d** decrements the value </br>
+**s** squares the value </br>
+**o** outputs the value into the return array </br>
+Invalid characters should be ignored.</br>
+``` 
+parse("iiisdoso") => [ 8, 64 ] 
+```
