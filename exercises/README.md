@@ -36,6 +36,7 @@ Deadfish has 4 commands, each 1 character long: </br>
 **s** squares the value </br>
 **o** outputs the value into the return array </br>
 Invalid characters should be ignored.</br>
+[Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/deadfish-swim-rs) </br>
 ``` 
 parse("iiisdoso") => [ 8, 64 ] 
 ```
