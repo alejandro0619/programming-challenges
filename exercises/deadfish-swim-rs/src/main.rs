@@ -16,4 +16,4 @@ fn parse(string: &str)-> Vec<u32> {
   fn main() {
       parse("iiisdoso");
       
-  }
+}

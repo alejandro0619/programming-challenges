@@ -40,3 +40,12 @@ Invalid characters should be ignored.</br>
 ``` 
 parse("iiisdoso") => [ 8, 64 ] 
 ```
+
+9) Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.Examples: 
+</br>
+[Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/spin-words-rs) </br>
+
+``` 
+spinWords( "This is a test") => returns "This is a test" 
+spinWords( "This is another test" )=> returns "This is rehtona test"
+ ```
