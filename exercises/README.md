@@ -58,3 +58,9 @@ alphabet_position("The sunset sets at twelve o' clock.")
 Should return 
 "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" 
 ```
+11) If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+</br>
+Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in. Additionally, if the number is negative, return 0 (for languages that do have them).
+</br>
+Note: If the number is a multiple of both 3 and 5, only count it once.
+[Rust Solution](https://github.com/alejandro0619/programming-challenges/tree/main/multiples-of-3-and-5-rs)
